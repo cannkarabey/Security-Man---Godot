@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgry4mc7uqioq"
+path="res://.godot/imported/canavar sesi.wav-774f0ba764cf8dfb4876a03cac21f028.sample"
+
+[deps]
+
+source_file="res://assets/sound/canavar sesi.wav"
+dest_files=["res://.godot/imported/canavar sesi.wav-774f0ba764cf8dfb4876a03cac21f028.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
