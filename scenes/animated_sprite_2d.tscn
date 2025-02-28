@@ -1,0 +1,87 @@
+[gd_scene load_steps=20 format=3 uid="uid://wsxltomh7eub"]
+
+[ext_resource type="Texture2D" uid="uid://ory4tnoa6w8x" path="res://Assets/Güvenlik/sprite_00.png" id="1_pjdpr"]
+[ext_resource type="Texture2D" uid="uid://ckxdecmiws8hb" path="res://Assets/Güvenlik/sprite_01.png" id="2_62fbd"]
+[ext_resource type="Texture2D" uid="uid://d0qhxiidnw4k" path="res://Assets/Güvenlik/sprite_02.png" id="3_roy2e"]
+[ext_resource type="Texture2D" uid="uid://b0f0rjek6wfxo" path="res://Assets/Güvenlik/sprite_03.png" id="4_e6wlt"]
+[ext_resource type="Texture2D" uid="uid://cny3tcol2dao4" path="res://Assets/Güvenlik/sprite_04.png" id="5_kxiyx"]
+[ext_resource type="Texture2D" uid="uid://c3ophwucat6at" path="res://Assets/Güvenlik/sprite_05.png" id="6_e3dho"]
+[ext_resource type="Texture2D" uid="uid://fkip8ra4u3hw" path="res://Assets/Güvenlik/sprite_06.png" id="7_nlcex"]
+[ext_resource type="Texture2D" uid="uid://omdkewf1nn5s" path="res://Assets/Güvenlik/sprite_07.png" id="8_nvogi"]
+[ext_resource type="Texture2D" uid="uid://dcnqvty2d0111" path="res://Assets/Güvenlik/sprite_08.png" id="9_1jyph"]
+[ext_resource type="Texture2D" uid="uid://hvicxfkxw8u4" path="res://Assets/Güvenlik/sprite_09.png" id="10_xadbh"]
+[ext_resource type="Texture2D" uid="uid://blvhu75o27fym" path="res://Assets/Güvenlik/sprite_10.png" id="11_8fyj1"]
+[ext_resource type="Texture2D" uid="uid://cwrbthqd443wd" path="res://Assets/Güvenlik/sprite_11.png" id="12_qweo0"]
+[ext_resource type="Texture2D" uid="uid://mxjcmnbjk5ly" path="res://Assets/Güvenlik/sprite_12.png" id="13_3xrms"]
+[ext_resource type="Texture2D" uid="uid://deyo2qgvo1j7o" path="res://Assets/Güvenlik/sprite_13.png" id="14_unom4"]
+[ext_resource type="Texture2D" uid="uid://b57bnkum5tm7y" path="res://Assets/Güvenlik/sprite_14.png" id="15_wdgk5"]
+[ext_resource type="Texture2D" uid="uid://drko0y657bxj2" path="res://Assets/Güvenlik/sprite_15.png" id="16_7kee7"]
+[ext_resource type="Texture2D" uid="uid://bv3creavn1k2x" path="res://Assets/Güvenlik/sprite_16.png" id="17_5ys4x"]
+[ext_resource type="Texture2D" uid="uid://340eqysgjto6" path="res://Assets/Güvenlik/sprite_17.png" id="18_okt8s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atc67"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pjdpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_62fbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_roy2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e6wlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kxiyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e3dho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nlcex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nvogi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1jyph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xadbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8fyj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qweo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3xrms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_unom4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wdgk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7kee7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5ys4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_okt8s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(111, -79)
+sprite_frames = SubResource("SpriteFrames_atc67")
+frame_progress = 0.475526

@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://df0fwwxmrs7u0"]
+
+[ext_resource type="Script" path="res://Scripts/story_scene.gd" id="1_bcn1a"]
+[ext_resource type="AudioStream" uid="uid://dn7mht3upa153" path="res://assets/sound/721503__baggonotes__button_click2.wav" id="2_i2nhl"]
+
+[node name="Story Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+script = ExtResource("1_bcn1a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -16.0
+offset_right = 1938.0
+offset_bottom = 1289.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 92.0
+offset_right = 864.0
+offset_bottom = 507.0
+theme_override_font_sizes/font_size = 25
+text = "\"You are a security guard. Your company has ordered you to
+ collect some important reports from an abandoned hospital
+ that has been closed for years. These documents are waiting
+ for you in the laboratory, cafeteria, and corridor areas of the
+ hospital. However, you are not alone. A creature, mutated as
+ a result of an unknown experiment, watches you from the 
+shadows.\"
+
+\"You only have a flashlight with limited use. Staying in the dark may
+ leave you vulnerable... But remember—there's a reason it hides in the shadows.
+ Light is not just your guide; it may be your only weapon.
+ Hurry, collect the documents, and get out of here!\""
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 917.0
+offset_top = 512.0
+offset_right = 1094.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 50
+text = "SKIP"
+
+[node name="button sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_i2nhl")
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

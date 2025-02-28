@@ -1,0 +1,133 @@
+[gd_scene load_steps=16 format=3 uid="uid://hx62dafcvj8t"]
+
+[ext_resource type="Script" path="res://Scripts/end.gd" id="1_5blbh"]
+[ext_resource type="Texture2D" uid="uid://cwrbthqd443wd" path="res://assets/Güvenlik/sprite_11.png" id="2_cu6td"]
+[ext_resource type="Texture2D" uid="uid://hvicxfkxw8u4" path="res://assets/Güvenlik/sprite_09.png" id="2_etyqh"]
+[ext_resource type="Texture2D" uid="uid://blvhu75o27fym" path="res://assets/Güvenlik/sprite_10.png" id="3_3l82q"]
+[ext_resource type="Texture2D" uid="uid://dtdd4wyedoasr" path="res://assets/Canavar/sprite_05.png" id="3_o24fo"]
+[ext_resource type="Texture2D" uid="uid://mxjcmnbjk5ly" path="res://assets/Güvenlik/sprite_12.png" id="5_w85hx"]
+[ext_resource type="Texture2D" uid="uid://deyo2qgvo1j7o" path="res://assets/Güvenlik/sprite_13.png" id="6_3ipqs"]
+[ext_resource type="Texture2D" uid="uid://dypoob1u6k0s0" path="res://assets/Canavar/sprite_06.png" id="8_vaccw"]
+[ext_resource type="Texture2D" uid="uid://c82vgq0em4o62" path="res://assets/Canavar/sprite_07.png" id="9_5nbfn"]
+[ext_resource type="Texture2D" uid="uid://de1tqm0a3hr7p" path="res://assets/Canavar/sprite_08.png" id="10_wqjja"]
+[ext_resource type="Texture2D" uid="uid://ci4mfsimfh3w0" path="res://assets/Canavar/sprite_09.png" id="11_qj2l0"]
+[ext_resource type="Texture2D" uid="uid://dm2xxef7fhykg" path="res://assets/report.png" id="12_56541"]
+[ext_resource type="AudioStream" uid="uid://dn7mht3upa153" path="res://assets/sound/721503__baggonotes__button_click2.wav" id="13_5ca17"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_scqgd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_etyqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3l82q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cu6td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w85hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3ipqs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slqkh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o24fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vaccw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5nbfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wqjja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qj2l0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="END" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5blbh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+offset_right = 2143.0
+offset_bottom = 1447.0
+color = Color(0, 0.384314, 0.443137, 1)
+
+[node name="GAME NAME" type="Label" parent="."]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 81.0
+offset_right = 1093.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER
+"
+
+[node name="RESTART" type="Button" parent="."]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 261.0
+offset_right = 514.0
+offset_bottom = 373.0
+theme_override_font_sizes/font_size = 50
+text = "PLAY AGAIN
+"
+
+[node name="QUIT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 262.0
+offset_right = 865.0
+offset_bottom = 375.0
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(172, 466)
+scale = Vector2(3.46094, 3.90625)
+sprite_frames = SubResource("SpriteFrames_scqgd")
+autoplay = "default"
+frame_progress = 0.0147325
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1014, 176)
+scale = Vector2(3.88281, 4.48438)
+sprite_frames = SubResource("SpriteFrames_slqkh")
+autoplay = "default"
+frame_progress = 0.905562
+
+[node name="Report" type="Sprite2D" parent="."]
+position = Vector2(383, 486)
+scale = Vector2(3.125, 2.9375)
+texture = ExtResource("12_56541")
+
+[node name="button sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_5ca17")
+
+[connection signal="pressed" from="RESTART" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="QUIT" to="." method="_on_QuitButton_pressed"]

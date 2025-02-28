@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp3fwrnmj8xr5"]
+
+[ext_resource type="AudioStream" uid="uid://3yop6ed7hir3" path="res://assets/sound/oyun arka plan sesi.wav" id="1_fd0la"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_fd0la")
+volume_db = -1.365
+autoplay = true

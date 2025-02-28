@@ -1,0 +1,143 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7ssa8uo4p3yr"]
+
+[ext_resource type="Texture2D" uid="uid://bpcosvdice4iu" path="res://assets/lights/ışık.png" id="2_x2xvx"]
+[ext_resource type="PackedScene" uid="uid://bo0hj6kif2fwt" path="res://scenes/player.tscn" id="3_ctwu4"]
+[ext_resource type="PackedScene" uid="uid://bg33ulk1x6c5t" path="res://scenes/Door.tscn" id="4_nuup7"]
+[ext_resource type="PackedScene" uid="uid://dd6c0exucqnnn" path="res://scenes/Ghoul.tscn" id="5_fu1an"]
+[ext_resource type="Script" path="res://scripts/activation_zone.gd" id="6_bt873"]
+[ext_resource type="PackedScene" uid="uid://ooimy0a5g3sb" path="res://scenes/koridor.tscn" id="6_rbn8t"]
+[ext_resource type="PackedScene" uid="uid://dfh1bf8enwamv" path="res://scenes/report.tscn" id="7_qmch4"]
+
+[sub_resource type="GDScript" id="GDScript_pv7qu"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0p4ct"]
+a = Vector2(-1.18716, -53.9165)
+b = Vector2(-0.687626, 96.4539)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1udqy"]
+size = Vector2(74, 20)
+
+[node name="room_2" type="Node2D"]
+script = SubResource("GDScript_pv7qu")
+
+[node name="Tum alani aydinlat" type="DirectionalLight2D" parent="."]
+visible = false
+energy = 0.8
+
+[node name="Player" parent="." instance=ExtResource("3_ctwu4")]
+position = Vector2(155, 200)
+scale = Vector2(0.999916, 0.990146)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Door" parent="." instance=ExtResource("4_nuup7")]
+position = Vector2(1149, 539)
+target_scene_path = "res://scenes/room_3.tscn"
+
+[node name="Ghoul" parent="." instance=ExtResource("5_fu1an")]
+position = Vector2(1046, 225)
+
+[node name="Activation Zone" type="Area2D" parent="." node_paths=PackedStringArray("enemy")]
+position = Vector2(907, 281)
+scale = Vector2(20.36, 16.92)
+script = ExtResource("6_bt873")
+enemy = NodePath("../Ghoul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Activation Zone"]
+position = Vector2(-14.4892, -1.41844)
+scale = Vector2(0.70334, 1.13892)
+shape = SubResource("SegmentShape2D_0p4ct")
+
+[node name="KORİDOR" parent="." instance=ExtResource("6_rbn8t")]
+z_index = -1
+position = Vector2(8, 43)
+
+[node name="door collide" type="CollisionShape2D" parent="."]
+position = Vector2(104, 63)
+shape = SubResource("RectangleShape2D_1udqy")
+
+[node name="lights" type="Node" parent="."]
+
+[node name="LightSource2" type="PointLight2D" parent="lights"]
+position = Vector2(1095, 621)
+color = Color(1, 0.45098, 0.447059, 1)
+energy = 0.5
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.2
+
+[node name="LightSource3" type="PointLight2D" parent="lights"]
+position = Vector2(600, 632)
+color = Color(0.533333, 0.427451, 0.160784, 1)
+energy = 0.5
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.2
+
+[node name="LightSource4" type="PointLight2D" parent="lights"]
+position = Vector2(248, 635)
+color = Color(0.820317, 0.884855, 0, 1)
+energy = 0.5
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.2
+
+[node name="LightSource" type="PointLight2D" parent="lights"]
+position = Vector2(1096, 459)
+color = Color(1, 0.329412, 0.443137, 1)
+energy = 0.5
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.2
+
+[node name="LightSource5" type="PointLight2D" parent="lights"]
+position = Vector2(57, 349)
+color = Color(1, 0.0862745, 0, 1)
+energy = 0.5
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.2
+
+[node name="LightSource6" type="PointLight2D" parent="lights"]
+position = Vector2(248, 635)
+color = Color(0.820317, 0.884855, 0, 1)
+energy = 0.5
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.2
+
+[node name="LightSource7" type="PointLight2D" parent="lights"]
+position = Vector2(375, 95)
+color = Color(0.820317, 0.884855, 0, 1)
+energy = 0.5
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.2
+
+[node name="LightSource9" type="PointLight2D" parent="lights"]
+position = Vector2(792, 90)
+color = Color(0.905882, 0.309804, 0, 1)
+energy = 0.5
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.2
+
+[node name="door" type="PointLight2D" parent="lights"]
+position = Vector2(1234, 536)
+color = Color(0.590819, 0.608174, 0.964957, 1)
+energy = 10.0
+texture = ExtResource("2_x2xvx")
+texture_scale = 0.5
+
+[node name="reports" type="Node" parent="."]
+
+[node name="report4" parent="reports" instance=ExtResource("7_qmch4")]
+position = Vector2(245, 633)
+
+[node name="report" parent="reports" instance=ExtResource("7_qmch4")]
+position = Vector2(54, 352)
+
+[node name="report2" parent="reports" instance=ExtResource("7_qmch4")]
+position = Vector2(378, 98)
+
+[node name="report3" parent="reports" instance=ExtResource("7_qmch4")]
+position = Vector2(577, 629)
+
+[node name="report5" parent="reports" instance=ExtResource("7_qmch4")]
+position = Vector2(793, 94)
+
+[connection signal="body_entered" from="Activation Zone" to="." method="_on_activation_zone_body_entered"]
+[connection signal="body_entered" from="Activation Zone" to="Activation Zone" method="_on_body_entered"]

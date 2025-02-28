@@ -1,0 +1,129 @@
+[gd_scene load_steps=16 format=3 uid="uid://d1wqd7443t4q5"]
+
+[ext_resource type="Script" path="res://scripts/begin.gd" id="1_j548s"]
+[ext_resource type="Texture2D" uid="uid://cwrbthqd443wd" path="res://assets/Güvenlik/sprite_11.png" id="2_1omqx"]
+[ext_resource type="Texture2D" uid="uid://hvicxfkxw8u4" path="res://assets/Güvenlik/sprite_09.png" id="2_ug3qf"]
+[ext_resource type="Texture2D" uid="uid://dtdd4wyedoasr" path="res://assets/Canavar/sprite_05.png" id="3_180vt"]
+[ext_resource type="Texture2D" uid="uid://blvhu75o27fym" path="res://assets/Güvenlik/sprite_10.png" id="3_380jk"]
+[ext_resource type="Texture2D" uid="uid://mxjcmnbjk5ly" path="res://assets/Güvenlik/sprite_12.png" id="5_l03fv"]
+[ext_resource type="Texture2D" uid="uid://deyo2qgvo1j7o" path="res://assets/Güvenlik/sprite_13.png" id="6_i3yyp"]
+[ext_resource type="Texture2D" uid="uid://dypoob1u6k0s0" path="res://assets/Canavar/sprite_06.png" id="8_004th"]
+[ext_resource type="Texture2D" uid="uid://c82vgq0em4o62" path="res://assets/Canavar/sprite_07.png" id="9_e4fkt"]
+[ext_resource type="Texture2D" uid="uid://de1tqm0a3hr7p" path="res://assets/Canavar/sprite_08.png" id="10_mfqj1"]
+[ext_resource type="Texture2D" uid="uid://ci4mfsimfh3w0" path="res://assets/Canavar/sprite_09.png" id="11_d4bpa"]
+[ext_resource type="Texture2D" uid="uid://dm2xxef7fhykg" path="res://assets/report.png" id="12_d6b86"]
+[ext_resource type="AudioStream" uid="uid://dn7mht3upa153" path="res://assets/sound/721503__baggonotes__button_click2.wav" id="13_jncxn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x58k7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ug3qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_380jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1omqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l03fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i3yyp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3jf2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_180vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_004th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e4fkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mfqj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d4bpa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MAINMENU" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j548s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+offset_top = -30.0
+offset_right = 2854.0
+offset_bottom = 1977.0
+color = Color(0, 0.384671, 0.443774, 1)
+
+[node name="GAME NAME" type="Label" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 78.0
+offset_right = 916.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 50
+text = "HANDSOME SECURITY MAN"
+
+[node name="PLAY" type="Button" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 270.0
+offset_right = 485.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="QUIT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 270.0
+offset_right = 856.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(169, 482)
+scale = Vector2(3.46094, 3.90625)
+sprite_frames = SubResource("SpriteFrames_x58k7")
+autoplay = "default"
+frame = 2
+frame_progress = 0.723826
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1018, 458)
+scale = Vector2(3.88281, 4.48438)
+sprite_frames = SubResource("SpriteFrames_3jf2w")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0696249
+
+[node name="Report" type="Sprite2D" parent="."]
+position = Vector2(404, 508)
+scale = Vector2(3.75, 3.25)
+texture = ExtResource("12_d6b86")
+
+[node name="button sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_jncxn")
+
+[connection signal="pressed" from="PLAY" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="QUIT" to="." method="_on_QuitButton_pressed"]
